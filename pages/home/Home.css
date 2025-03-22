@@ -1,0 +1,139 @@
+.home {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    background-color: var(--background);
+    color: var(--text);
+
+    place-items: center;
+    align-content: space-between;
+
+    position: relative;
+
+    max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .home {
+        background-image: url('/assets/images/background-dark.svg');
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .home {
+        background-image: url('/assets/images/background-light.svg');
+    }
+}
+
+:root.theme-dark .home {
+        background-image: url('/assets/images/background-dark.svg');
+}
+
+:root.theme-light .home {
+        background-image: url('/assets/images/background-light.svg');
+}
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: grid;
+    place-items: center;
+    z-index: 3;
+    max-width: 100%;
+}
+
+.main {
+    --heroTextPadding: 2rem;
+    width: fit-content;
+    max-width: 100vw;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.main .hero-text h1 {
+    max-width: 70ch;
+}
+
+.main .hero-text p {
+    font-size: var(--medium);
+    max-width: 70ch;
+}
+
+.main .hero-text .hero-h1 {
+    margin-block: var(--heroTextPadding);
+}
+
+.main .hero-text h1 {
+    font-size: var(--extra-extra-large);
+    text-transform: uppercase;
+}
+
+.main .hero-text {
+    text-align: center;
+    width: 100%;
+    word-wrap: normal;
+}
+
+.main .placeholder-notice {
+    font-style: italic;
+    text-transform: uppercase;
+    background-color: var(--text);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    color: var(--background);
+}
+
+.main .infoCard-display {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer {
+    width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+    .main {
+        --heroTextPadding: 3rem;
+    }
+    
+    .main .hero-text h1 {
+        font-size: var(--extra-extra-extra-large);
+    }
+
+    .main .hero-text p {
+        font-size: var(--large);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .main {
+        --heroTextPadding: 4rem;
+    }
+    
+    .main .hero-text h1 {
+        font-size: var(--extra-extra-extra-extra-large);
+    }
+}

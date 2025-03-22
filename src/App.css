@@ -1,0 +1,229 @@
+/*-------------------------*/
+/* DEFAULT STYLING */
+/*-------------------------*/
+:root {
+
+  margin: 0 auto;
+  color-scheme: light dark;
+
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --extra-small: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --small: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --medium: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --large: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --extra-large: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --extra-extra-large: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --extra-extra-extra-large: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --extra-extra-extra-extra-large: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+  --padding: 1rem;
+  --border-radius: 0.75rem;
+  --icon-size: 1.5rem;
+
+  --grayed: hsl(0, 0%, 50%);
+
+  --saturation: 75%;
+  --mainHue: 170;
+  --accentHue: 215;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: hsl(var(--mainHue), var(--saturation), 5%);
+    --background: hsl(var(--mainHue), var(--saturation), 95%);
+    --accent: hsl(var(--accentHue), var(--saturation), 35%);
+    --selection: hsl(var(--accentHue), var(--saturation), 75%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: hsl(var(--mainHue), var(--saturation), 95%);
+    --background: hsl(var(--mainHue), var(--saturation), 5%);
+    --accent: hsl(var(--accentHue), var(--saturation), 65%);
+    --selection: hsl(var(--accentHue), var(--saturation), 25%);
+  }
+}
+
+:root.theme-light {
+    --text: hsl(var(--mainHue), var(--saturation), 5%);
+    --background: hsl(var(--mainHue), var(--saturation), 95%);
+    --accent: hsl(var(--accentHue), var(--saturation), 35%);
+    --selection: hsl(var(--accentHue), var(--saturation), 75%);
+}
+
+:root.theme-dark {
+    --text: hsl(var(--mainHue), var(--saturation), 95%);
+    --background: hsl(var(--mainHue), var(--saturation), 5%);
+    --accent: hsl(var(--accentHue), var(--saturation), 65%);
+    --selection: hsl(var(--accentHue), var(--saturation), 25%);
+}
+
+h1 {
+  font-size: var(--extra-extra-extra-extra-large);
+}
+
+h2 {
+  font-size: var(--extra-extra-extra-large);
+}
+
+h3 {
+  font-size: var(--extra-extra-large);
+}
+
+h4 {
+  font-size: var(--extra-large);
+}
+
+h5 {
+  font-size: var(--large);
+}
+
+small {
+  font-size: var(--small);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+svg path {
+  fill: var(--customFill, currentColor);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+  font-size: var(--medium);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+a {
+  border-radius: 100rem !important;
+}
+
+a,
+button,
+.div-button,
+svg {
+  font-size: var(--p);
+  border: transparent;
+  outline: 2px solid transparent;
+  outline-offset: -0.5rem;
+
+  text-decoration: none;
+  color: currentColor;
+}
+
+a,
+button,
+.div-button {
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+button:hover,
+.div-button:hover {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+.div-button:focus-visible {
+  color: var(--background);
+  outline: 0.5rem solid var(--accent);
+  outline-offset: -1px;
+  background-color: var(--accent) !important;
+}
+
+a.site-name:focus-visible,
+button.site-name:focus-visible,
+.div-button.site-name:focus-visible {
+  outline: 0rem solid var(--background);
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+  background-color: var(--background);
+  isolation: isolate;
+}
+
+.app-container section {
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--grayed);
+  }
+}
