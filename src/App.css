@@ -8,57 +8,83 @@
 
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
-  --extra-small: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
-  --small: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
-  --medium: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --large: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
-  --extra-large: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-  --extra-extra-large: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
-  --extra-extra-extra-large: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
-  --extra-extra-extra-extra-large: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+  --extra-small: calc(clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem) * var(--fontScale));
+  --small: calc(clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem) * var(--fontScale));
+  --medium: calc(clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem) * var(--fontScale));
+  --large: calc(clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem) * var(--fontScale));
+  --extra-large: calc(clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem) * var(--fontScale));
+  --extra-extra-large: calc(clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem) * var(--fontScale));
+  --extra-extra-extra-large: calc(clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem) * var(--fontScale));
+  --extra-extra-extra-extra-large: calc(clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem) * var(--fontScale));
+
+  --fontScale: 1;
 
   --padding: 1rem;
   --border-radius: 0.75rem;
   --icon-size: 1.5rem;
 
   --grayed: hsl(0, 0%, 50%);
+  
+  --textHue: 120;
+  --textSaturation: 15%;
+  --textLightness: 5%;
+  
+  --backgroundHue: 120;
+  --backgroundSaturation: 15%;
+  --backgroundLightness: 95%;
+  
+  --primaryHue: 120;
+  --primarySaturation: 25%;
+  --primaryLightness: 55%;
+  
+  --secondaryHue: 120;
+  --secondarySaturation: 35%;
+  --secondaryLightness: 75%;
+  
+  --accentHue: 120;
+  --accentSaturation: 15%;
+  --accentLightness: 65%;
 
-  --saturation: 75%;
-  --mainHue: 170;
-  --accentHue: 215;
+  --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+  --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness));
+  --primary: hsl(var(--primaryHue), var(--primarySaturation), var(--primaryLightness));
+  --secondary: hsl(var(--secondaryHue), var(--secondarySaturation), var(--secondaryLightness));
+  --accent: hsl(var(--accentHue), var(--accentSaturation), var(--accentLightness));
+  --selection: hsl(var(--accentHue), var(--accentSaturation), calc(var(--accentLightness) - 5%));
 }
 
-@media (prefers-color-scheme: light) {
+#root {
+  min-height: 100svh;
+  width: 100%;
+  background-color: var(--background);
+  isolation: isolate;
+}
+
+.accentTheme {
+  --text: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness)); 
+  --background: hsl(var(--accentHue), var(--accentSaturation), var(--accentLightness));
+  --selection: hsl(var(--accentHue), var(--accentSaturation), calc(var(--accentLightness) - 15%));
+}
+
+/* @media (prefers-color-scheme: light) {
   :root {
-    --text: hsl(var(--mainHue), var(--saturation), 5%);
-    --background: hsl(var(--mainHue), var(--saturation), 95%);
-    --accent: hsl(var(--accentHue), var(--saturation), 35%);
-    --selection: hsl(var(--accentHue), var(--saturation), 75%);
-  }
-}
 
-@media (prefers-color-scheme: dark) {
+  }
+} */
+
+/* :root.theme-light {
+
+} */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --text: hsl(var(--mainHue), var(--saturation), 95%);
-    --background: hsl(var(--mainHue), var(--saturation), 5%);
-    --accent: hsl(var(--accentHue), var(--saturation), 65%);
-    --selection: hsl(var(--accentHue), var(--saturation), 25%);
+
   }
-}
+} */
 
-:root.theme-light {
-    --text: hsl(var(--mainHue), var(--saturation), 5%);
-    --background: hsl(var(--mainHue), var(--saturation), 95%);
-    --accent: hsl(var(--accentHue), var(--saturation), 35%);
-    --selection: hsl(var(--accentHue), var(--saturation), 75%);
-}
+/* :root.theme-dark {
 
-:root.theme-dark {
-    --text: hsl(var(--mainHue), var(--saturation), 95%);
-    --background: hsl(var(--mainHue), var(--saturation), 5%);
-    --accent: hsl(var(--accentHue), var(--saturation), 65%);
-    --selection: hsl(var(--accentHue), var(--saturation), 25%);
-}
+} */
 
 h1 {
   font-size: var(--extra-extra-extra-extra-large);
@@ -103,11 +129,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
@@ -116,21 +138,17 @@ svg path {
   fill: var(--customFill, currentColor);
 }
 
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
 }
 
 p {
@@ -138,71 +156,55 @@ p {
   font-size: var(--medium);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
 a {
-  border-radius: 100rem !important;
+  border-radius: 100rem;
 }
 
-a,
-button,
-.div-button,
-svg {
-  font-size: var(--p);
+h3 a, h4 a, h5 a, h6 a, p a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+h3 a:focus-visible, h4 a:focus-visible, h5 a:focus-visible, h6 a:focus-visible, p a:focus-visible {
+  padding: 0rem 0.4rem;
+}
+
+a, button, .div-button, svg {
+  font-size: inherit;
   border: transparent;
   outline: 2px solid transparent;
-  outline-offset: -0.5rem;
 
   text-decoration: none;
   color: currentColor;
 }
 
-a,
-button,
-.div-button {
+a, button, .div-button {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover,
-button:hover,
-.div-button:hover {
-  cursor: pointer;
-  color: var(--accent);
+a:hover, button:hover, .div-button:hover {
+  --text: hsl(var(--accentHue), var(--accentSaturation), var(--accentLightness));
+  cursor: pointer;  
+  color: var(--text);
 }
 
-a:focus-visible,
-button:focus-visible,
-.div-button:focus-visible {
-  color: var(--background);
-  outline: 0.5rem solid var(--accent);
-  outline-offset: -1px;
-  background-color: var(--accent) !important;
+a:focus-visible, button:focus-visible, .div-button:focus-visible {
+  --text: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness));
+  --background: hsl(var(--accentHue), var(--accentSaturation), var(--accentLightness));
+  color: var(--text);
+  /* outline: 0.5rem solid var(--background); */
+  /* outline-offset: -1px; */
+  background-color: var(--background) !important;
 }
 
-a.site-name:focus-visible,
-button.site-name:focus-visible,
-.div-button.site-name:focus-visible {
+a.site-name:focus-visible, button.site-name:focus-visible, .div-button.site-name:focus-visible {
+  --background: hsl(var(--accentHue), var(--accentSaturation), var(--accentLightness));
   outline: 0rem solid var(--background);
 }
 
-ul,
-ol {
+ul, ol {
   list-style: none;
   padding-left: 0;
-}
-
-#root {
-  min-height: 100svh;
-  width: 100%;
-  background-color: var(--background);
-  isolation: isolate;
 }
 
 .app-container section {

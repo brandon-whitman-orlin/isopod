@@ -1,0 +1,234 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 2rem;
+}
+
+.carousel-wrapper {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 45%;
+    z-index: 5;
+    left: -1rem;
+    height: 100%;
+    background: linear-gradient(90deg, var(--background) 0%, transparent 100%);
+}
+
+.carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 45%;
+    z-index: 3;
+    right: -1rem;
+    height: 100%;
+    background: linear-gradient(-90deg, var(--background) 0%, transparent 100%);
+}
+  
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1rem; */
+}
+  
+.carousel-item {
+    flex: 1 1 0;
+    width: 0;
+    padding-inline: 2rem;
+    border-radius: var(--border-radius);
+    padding-block: 0.5rem 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel-item p {
+    text-align: center;
+}
+  
+.carousel-item.active {
+    z-index: 3;
+}
+  
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    max-width: 400px;
+}
+  
+.prev, .next {
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    z-index: 5;
+    transform: translateY(-0.75rem);
+    margin: 1rem;
+    border-radius: 100%;
+    background-color: var(--text);
+}
+
+.prev:hover, .next:hover, .prev:focus-visible, .next:focus-visible {
+    transform: scale(1.1) translateY(-0.75rem);
+    background-color: var(--text);
+    -webkit-box-shadow: 0px 0px 10px 0px var(--grayed); 
+    box-shadow: 0px 0px 10px 0px var(--grayed);
+}
+
+.prev:focus-visible path , .next:focus-visible  path {
+    fill: var(--text);
+}
+
+.prev svg, .next svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    padding: 1rem;
+}
+
+.prev svg path, .next svg  path {
+    fill: var(--background);
+}
+  
+.prev {
+    left: 7.5%;
+}
+  
+.next {
+    right: 7.5%;
+}
+  
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 1rem;
+}
+  
+.dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.dot svg path {
+    fill: var(--grayed)
+}
+  
+.dot.active svg path {
+    fill: var(--text)
+}
+
+
+@media screen and (max-width: 1000px) {
+    .carousel-item {
+        padding-inline: 0.5rem;
+    }
+
+    .prev, .next {
+        width: 3rem;
+        height: 3rem;
+        transform: translateY(-2.25rem);
+    }
+
+    .prev:hover, .next:hover, .prev:focus-visible, .next:focus-visible {
+        transform: scale(1.1) translateY(-2.25rem);
+    }
+
+    .prev svg, .next svg {
+        padding: 0.5rem;
+    }
+
+    .carousel-wrapper::before {
+        width: 12.5%;
+    }
+    
+    .carousel-wrapper::after {
+        width: 12.5%;
+    }
+      
+    .prev {
+        left: 0%;
+    }
+      
+    .next {
+        right: 0%;
+    }
+      
+}
+
+@media screen and (max-width: 750px) {
+    .carousel {
+        overflow: visible;
+        width: 100%;
+    }
+
+    .carousel-wrapper::before {
+        width: 50%;
+    }
+
+    .carousel-wrapper::after {
+        width: 50%;
+    }
+
+    .prev {
+        left: 5%;
+    }
+      
+    .next {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel {
+        width: 200%;
+    }
+
+    .prev, .next {
+        margin: 0rem;
+    }
+
+    .prev {
+        left: 27.5%;
+    }
+      
+    .next {
+        right: 27.5%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .prev, .next {
+        width: 2rem;
+        height: 2rem;
+    }
+}

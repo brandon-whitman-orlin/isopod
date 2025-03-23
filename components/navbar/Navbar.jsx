@@ -108,7 +108,7 @@ const Navbar = ({ links, name = '' }) => {
                     return (
                         <li className="nav-item" key={index}>
                             {isActive ? (
-                                <div className="active">{link}</div>
+                                link
                             ) : (
                                 link
                             )}
