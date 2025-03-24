@@ -1,0 +1,81 @@
+.article-link {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.page-section > .article-link {
+    margin-bottom: 2rem;
+}
+
+.article-link .article-link-content .article-link-image {
+    border-radius: var(--border-radius);
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.article-link .article-link-content .article-link-title {
+    text-align: left;
+}
+
+.article-link .article-link-content .article-link-information {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.article-link .article-link-content .article-link-read-time-wrapper, .article-link .article-link-content .article-link-publish-date-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.article-link .article-link-content .article-link-information svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.article-link .article-link-content, .article-link .article-link-content .article-link-information svg path {
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+    color: var(--text);
+    fill: var(--text) !important;
+}
+
+.article-link .article-link-content .article-link-information .clock-icon .clock_svg__clock-hands {
+    fill: var(--background) !important;
+}
+
+.article-link:hover, .article-link:focus-visible {
+    transform: scale(1.05);
+    background-color: var(--text);
+}
+
+.article-link:hover .article-link-content .article-link-information .clock-icon .clock_svg__clock-hands,
+.article-link:focus-visible .article-link-content .article-link-information .clock-icon .clock_svg__clock-hands {
+    fill: var(--accent) !important;
+}
+
+@media screen and (max-width: 550px) {
+    .article-link .article-link-title {
+        font-size: var(--large);
+    }
+
+    .article-link .article-link-description {
+        --fontScale: 0.9;
+        font-size: calc(var(--large) * var(--fontScale));
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .article-link .article-link-content .article-link-information {
+        font-size: var(--extra-small);
+    }
+
+    .article-link .article-link-content .article-link-information svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
