@@ -3,7 +3,7 @@ import "./Collaborate.css";
 
 function Collaborate() {
   return (
-    <p>Collaborate page coming soon :D</p>
+    <p>Collaboration page coming soon :D</p>
   );
 }
 
