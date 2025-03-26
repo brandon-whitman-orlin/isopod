@@ -73,7 +73,7 @@ function Home() {
                 image={CarouselImage1}
                 title="Cool Isopod 1"
                 description="Cool Isopod 1"
-                link="link1"
+                link="/defaultarticle"
                 readTime={5}
                 publishDate="03/24/2025"
                 articleAuthor="Author Name"
@@ -83,7 +83,7 @@ function Home() {
                 image={CarouselImage2}
                 title="Cool Isopod 2"
                 description="Cool Isopod 2"
-                link="link2"
+                link="/defaultarticle"
                 readTime={5}
                 publishDate="03/24/2025"
                 articleAuthor="Author Name"
@@ -93,7 +93,7 @@ function Home() {
                 image={CarouselImage3}
                 title="Cool Isopod 3"
                 description="Cool Isopod 3"
-                link="link3"
+                link="/defaultarticle"
                 readTime={5}
                 publishDate="03/24/2025"
                 articleAuthor="Author Name"
@@ -103,7 +103,7 @@ function Home() {
                 image={CarouselImage4}
                 title="Cool Isopod 4"
                 description="Cool Isopod 4"
-                link="link4"
+                link="/defaultarticle"
                 readTime={5}
                 publishDate="03/24/2025"
                 articleAuthor="Author Name"
@@ -113,7 +113,7 @@ function Home() {
                 image={CarouselImage5}
                 title="Cool Isopod 5"
                 description="Cool Isopod 5"
-                link="link5"
+                link="/defaultarticle"
                 readTime={5}
                 publishDate="03/24/2025"
                 articleAuthor="Author Name"
@@ -130,7 +130,7 @@ function Home() {
             image={ArticleImage1}
             title="Exciting Isopod News"
             description="A super cool article on Isopods"
-            link="link6"
+            link="/defaultarticle"
             readTime={5}
             publishDate={"03/24/2025"}
             articleAuthor={"Dr. Isopod"}
@@ -139,7 +139,7 @@ function Home() {
             image={ArticleImage2}
             title="More exciting Isopod News"
             description="Another super cool article on Isopods"
-            link="link7"
+            link="/defaultarticle"
             readTime={4}
             publishDate={"02/21/2025"}
             articleAuthor={"Dr. Isopod"}
