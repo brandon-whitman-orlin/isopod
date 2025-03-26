@@ -19,6 +19,8 @@ import ArticleLink from "../../components/article/ArticleLink";
 import ArticleImage1 from "../../assets/images/articleimage1.jpg";
 import ArticleImage2 from "../../assets/images/articleimage2.jpg";
 
+import WebFooter from "../../components/webfooter/WebFooter";
+
 import { ReactComponent as IsopodLogo } from "../../assets/icons/isopod-ball-eyes.svg";
 
 function Home() {
@@ -28,11 +30,11 @@ function Home() {
       <header className="header">
         <Navbar
           links={[
-            <a href="/species">Species</a>,
-            <a href="/care">Care</a>,
-            <a href="/articles">Articles</a>,
-            <a href="/about">About</a>,
-            <a href="/contact">Contact</a>,
+            <a href="/species" rel="noopener noreferrer">Species</a>,
+            <a href="/care" rel="noopener noreferrer">Care</a>,
+            <a href="/articles" rel="noopener noreferrer">Articles</a>,
+            <a href="/about" rel="noopener noreferrer">About</a>,
+            <a href="/contact" rel="noopener noreferrer">Contact</a>,
             // <div className="dropdown div-button" tabIndex={0}>Options <span className="dropdown-caret"></span>
             //   <ul className="dropdown-menu">
             //     <li><ThemeChange className="dropdown-option"/></li>
@@ -58,25 +60,13 @@ function Home() {
         <PageSection>
           <h2>Welcome to Niceopods</h2>
           <h3>Everything you need to know about Pet Isopods</h3>
-          <p>Whether you're a beginner or an expert, we provide everything you need to care for and understand isopods. Explore <a href="/species">species profiles</a>, <a href="/care">care sheets</a>, and <a href="/articles">industry news</a>, all in one place!</p>
+          <p>Whether you're a beginner or an expert, we provide everything you need to care for and understand isopods. Explore <a href="/species" rel="noopener noreferrer">species profiles</a>, <a href="/care" rel="noopener noreferrer">care sheets</a>, and <a href="/articles" rel="noopener noreferrer">industry news</a>, all in one place!</p>
         </PageSection>
         <PageSection>
           <h2>Featured Species</h2>
           <h3>
-            These are just a few species, for more, see our <a href="/species">species profiles</a>
+            These are just a few species, for more, see our <a href="/species" rel="noopener noreferrer">species profiles</a>
           </h3>
-          {/* <Carousel
-            images={[
-              CarouselImage1,
-              CarouselImage2,
-              CarouselImage3,
-              CarouselImage4,
-              CarouselImage5,
-            ]}
-            descriptions={["Image 1", "Image 2", "Image 3", "Image 4", "Image 5"]}
-            links={["link1", "link2", "link3", "link4", "link5"]}
-            // automatic
-          /> */}
           <Carousel
             articleLinks={[
               <ArticleLink
@@ -154,10 +144,28 @@ function Home() {
             publishDate={"02/21/2025"}
             articleAuthor={"Dr. Isopod"}
           />
-          <p>Want more? Find more articles <a href="/articles">here</a>!</p>
+          <p>Want more? Find more articles <a href="/articles" rel="noopener noreferrer">here</a>!</p>
+        </PageSection>
+        <PageSection>
+          <h2>Why Niceopods?</h2>
+          <h3>Because Isopods are Nice-opods!</h3>
+          <p>Niceopods is the ultimate resource for every isopod enthusiast, providing expert <a href="/care" rel="noopener noreferrer">care guides</a>, detailed <a href="/species" rel="noopener noreferrer">species profiles</a>, and the <a href="/articles" rel="noopener noreferrer">latest news</a> concerning the isopod pet trade! Whether you're new to the hobby, or an experienced keeper searching for the best isopod to add to your collection, our goal is to make isopod care accessible and interesting. From habitat setup to breeding tips, we cover everything you need to know about these fascinating creatures. Join us in exploring the incredible world of isopods!</p>
         </PageSection>
       </main>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <WebFooter 
+           children={[
+            [<a className="site-name" href="/" rel="noopener noreferrer"><span>
+              <span>
+                <IsopodLogo />
+              </span>
+              <span>Niceopods</span>
+            </span></a>],
+            [<h4>Services</h4>, <a href="/species" rel="noopener noreferrer">Species</a>, <a href="/care" rel="noopener noreferrer">Care</a>, <a href="/articles" rel="noopener noreferrer">Articles</a>, <a href="/affiliate" rel="noopener noreferrer">Affiliate Links</a>],
+            [<h4>More</h4>, <a href="/about" rel="noopener noreferrer">About Us</a>, <a href="/collaborate" rel="noopener noreferrer">Work With Us</a>, <a href="/contact" rel="noopener noreferrer">Contact</a>]
+          ]}
+        />
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,4 @@
+:root {
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+    color: var(--text);
+}

@@ -1,0 +1,91 @@
+.web-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    gap: 1rem;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.web-footer .footer-column {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 0.25rem;
+}
+
+.web-footer .footer-column h4 {
+    font-size: var(--large);
+}
+
+.web-footer .site-name {
+    padding: 1rem !important;
+    border-radius: var(--border-radius);
+}
+
+.web-footer .site-name span {
+    font-size: var(--medium);
+}
+
+.web-footer .site-name:hover, .web-footer .site-name:focus-visible {
+    --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness));
+    color: var(--background);
+}
+
+.web-footer .site-name:focus-visible {
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+    background-color: var(--text) !important;
+}
+
+.web-footer a {
+    padding: 0rem 0.4rem 0rem 0.4rem;
+}
+
+.web-footer a:hover, .web-footer a:focus-visible {
+    --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness));
+    color: var(--background);
+}
+
+.web-footer a:focus-visible {
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+    background-color: var(--text) !important;
+}
+
+.web-footer ::selection {
+    --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness));
+    background-color: var(--background);
+}
+
+.web-footer *:hover::selection, .web-footer *:focus-visible::selection  {
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness));
+    background-color: var(--text);
+}
+
+@media screen and (max-width: 400px) {
+    .web-footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .web-footer .footer-column {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }  
+    
+    .web-footer .footer-column a {
+        text-align: left;
+    }
+
+    .web-footer .footer-column:first-of-type {
+        order: 1;
+    }
+}

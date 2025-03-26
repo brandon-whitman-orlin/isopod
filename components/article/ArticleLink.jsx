@@ -19,7 +19,7 @@ const ArticleLink = ({
   tabIndex
 }) => {
   return (
-    <a href={link} className={`article-link ${className || ''}`} tabIndex={tabIndex}> {/* Apply className here */}
+    <a href={link} rel="noopener noreferrer" className={`article-link ${className || ''}`} tabIndex={tabIndex}> {/* Apply className here */}
       <article className="article-link-content">
         {image && <img src={image} alt="Article thumbnail" className="article-link-image" />}
         <h4 className="article-link-title">{title}</h4>

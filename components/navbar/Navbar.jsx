@@ -98,7 +98,7 @@ const Navbar = ({ links, name = '' }) => {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             {name && (
-                <a href="/" className='site-name'>
+                <a href="/" rel="noopener noreferrer" className='site-name'>
                     <h2>{name}</h2>
                 </a>
             )}
