@@ -8,6 +8,7 @@ import Care from "../pages/care/Care";
 import Articles from "../pages/articles/Articles";
 import Affiliate from "../pages/affiliate/Affiliate";
 import Collaborate from "../pages/collaborate/Collaborate";
+import DefaultArticle from "../pages/defaultarticle/DefaultArticle";
 
 import "./App.css"; // Ensure global styles are imported
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/articles" element={<Articles />} />
         <Route path="/affiliate" element={<Affiliate />} />
         <Route path="/collaborate" element={<Collaborate />} />
+        <Route path="/defaultarticle" element={<DefaultArticle />} />
       </Routes>
     </div>
   );
