@@ -11,11 +11,10 @@ import Collaborate from "../pages/collaborate/Collaborate";
 import DefaultArticle from "../pages/defaultarticle/DefaultArticle";
 
 import Armadillidium_vulgare from "./articles/armadillidium_vulgare/armadillidium_vulgare";
-import Armadillidium_maculatum from "./articles/armadillidium_maculatum/armadillidium_maculatum";
-import Porcellionides_scaber from "./articles/porcellionides_scaber/porcellionides_scaber";
-import Porcellionides_pruinosus from "./articles/porcellionides_pruinosus/porcellionides_pruinosus";
-import Porcellionides_laevis from "./articles/porcellionides_laevis/porcellionides_laevis";
-
+// import Armadillidium_maculatum from "./articles/armadillidium_maculatum/armadillidium_maculatum";
+// import Porcellionides_scaber from "./articles/porcellionides_scaber/porcellionides_scaber";
+// import Porcellionides_pruinosus from "./articles/porcellionides_pruinosus/porcellionides_pruinosus";
+// import Porcellionides_laevis from "./articles/porcellionides_laevis/porcellionides_laevis";
 
 import "./App.css"; // Ensure global styles are imported
 
@@ -33,10 +32,10 @@ const App = () => {
         <Route path="/collaborate" element={<Collaborate />} />
         <Route path="/defaultarticle" element={<DefaultArticle />} />
         <Route path="/articles/armadillidium_vulgare" element={<Armadillidium_vulgare />} />
-        <Route path="/articles/armadillidium_maculatum" element={<Armadillidium_maculatum />} />
+        {/* <Route path="/articles/armadillidium_maculatum" element={<Armadillidium_maculatum />} />
         <Route path="/articles/porcellionides_scaber" element={<Porcellionides_scaber />} />
         <Route path="/articles/porcellionides_pruinosus" element={<Porcellionides_pruinosus />} />
-        <Route path="/articles/porcellionides_laevis" element={<Porcellionides_laevis />} />
+        <Route path="/articles/porcellionides_laevis" element={<Porcellionides_laevis />} /> */}
       </Routes>
     </div>
   );
