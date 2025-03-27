@@ -25,8 +25,13 @@ const ArticleLink = ({
     if (article) {
       const fetchArticleData = async () => {
         try {
-          const jsonData = await import(`/src/articles/${article}/${article}.json`);
-          const image = await import(`/src/articles/${article}/assets/thumbnail.jpg`);
+          const articleNameX = article;
+          const jsonDataPath = `../../src/articles/${articleNameX}/${articleNameX}.json`;
+          const jsonData = await import(jsonDataPath);
+          console.log(jsonDataPath);
+          const imagePath = `../../src/articles/${articleNameX}/assets/thumbnail.jpg`;
+          const image = await import(imagePath);
+          console.log(imagePath);
           setArticleData({ ...jsonData.default, image: image.default });
         } catch (error) {
           console.error("Error loading article data:", error);
