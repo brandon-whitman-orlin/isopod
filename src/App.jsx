@@ -10,6 +10,8 @@ import Affiliate from "../pages/affiliate/Affiliate";
 import Collaborate from "../pages/collaborate/Collaborate";
 import DefaultArticle from "../pages/defaultarticle/DefaultArticle";
 
+import DefaultArticle from "../src/articles/armadillidium_vulgare";
+
 import "./App.css"; // Ensure global styles are imported
 
 const App = () => {

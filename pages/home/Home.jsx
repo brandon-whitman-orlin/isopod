@@ -5,6 +5,9 @@ import Navbar from "../../components/navbar/Navbar";
 import ThemeChange from "../../components/themechange/ThemeChange";
 import ThemeMenu from "../../components/themechange/ThemeMenu";
 import Hero from "../../components/hero/Hero";
+
+import HeroImage from "../../assets/images/hero.jpg";
+
 import PageSection from "../../components/pagesection/PageSection";
 import Carousel from "../../components/carousel/Carousel";
 
@@ -53,7 +56,7 @@ function Home() {
         />
       </header>
       <main className="main">
-        <Hero>
+        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Ed Alfonso">
           <h1>Niceopods</h1>
           <h2>The #1 resource for Isopod Enthusiasts</h2>
         </Hero>
@@ -89,16 +92,7 @@ function Home() {
                 articleAuthor="Author Name"
                 compressed={false}
               />,
-              <ArticleLink
-                image={CarouselImage3}
-                title="Cool Isopod 3"
-                description="Cool Isopod 3"
-                link="/defaultarticle"
-                readTime={5}
-                publishDate="03/24/2025"
-                articleAuthor="Author Name"
-                compressed={false}
-              />,
+              <ArticleLink article="armadillidium_vulgare" compressed={false} />,
               <ArticleLink
                 image={CarouselImage4}
                 title="Cool Isopod 4"
