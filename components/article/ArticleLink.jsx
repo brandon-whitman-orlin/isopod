@@ -26,10 +26,10 @@ const ArticleLink = ({
       const fetchArticleData = async () => {
         try {
           const articleNameX = article;
-          const jsonDataPath = `././src/articles/${articleNameX}/${articleNameX}.json`;
+          const jsonDataPath = `./src/articles/${articleNameX}/${articleNameX}.json`;
           const jsonData = await import(jsonDataPath);
           console.log(jsonDataPath);
-          const imagePath = `././src/articles/${articleNameX}/assets/thumbnail.jpg`;
+          const imagePath = `./src/articles/${articleNameX}/assets/thumbnail.jpg`;
           const image = await import(imagePath);
           console.log(imagePath);
           setArticleData({ ...jsonData.default, image: image.default });
