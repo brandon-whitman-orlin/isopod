@@ -6,7 +6,7 @@ const Hero = ({ img, alt, attribution, children }) => {
   return (
     <div className="hero">
       <img src={img} alt={alt} className="hero-image" />
-      <p className="image-attribution">Image from {attribution}.</p>
+      <p className="imageAttribution">Image from {attribution}.</p>
       <div className="hero-content">
         {children}
       </div>

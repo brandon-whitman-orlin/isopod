@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./armadillidium_vulgare.css";
 
-function armadillidium_vulgare() {
+function Armadillidium_vulgare() {
   return (
     <p>Armadillidium vulgare page coming soon :D</p>
   );
 }
 
-export default armadillidium_vulgare;
+export default Armadillidium_vulgare;

@@ -36,7 +36,7 @@ const ArticleLink = ({
     }
   }, [article]);
 
-  const finalData = articleData || { image, title, description, link, readTime, publishDate, articleAuthor };
+  const finalData = articleData || { image, title, description, link, readTime, publishDate, articleAuthor};
 
   if (!finalData.title || !finalData.link) return null;
 
@@ -44,6 +44,7 @@ const ArticleLink = ({
     <a href={finalData.link} rel="noopener noreferrer" className={`article-link ${className || ''}`} tabIndex={tabIndex}>
       <article className="article-link-content">
         {finalData.image && <img src={finalData.image} alt="Article thumbnail" className="article-link-image" />}
+        <p className="image-attribution">Image from {finalData.imageAttribution}</p>
         <h4 className="article-link-title">{finalData.title}</h4>
         {!compressed && (
           <>
@@ -57,10 +58,10 @@ const ArticleLink = ({
                 <CalendarIcon className="calendar-icon" />
                 {finalData.publishDate && <span className="article-link-publish-date">{finalData.publishDate}</span>}
               </div>
-              <div className="article-link-author-wrapper">
+              {/* <div className="article-link-author-wrapper">
                 <UserIcon className="user-icon" />
                 {finalData.articleAuthor && <span className="article-link-author">{finalData.articleAuthor}</span>}
-              </div>
+              </div> */}
             </div>
           </>
         )}

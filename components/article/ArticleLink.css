@@ -9,11 +9,32 @@
     margin-bottom: 2rem;
 }
 
+.article-link .article-link-content {
+    position: relative;
+}
+
 .article-link .article-link-content .article-link-image {
     border-radius: var(--border-radius);
     width: 100%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+}
+
+.article-link .article-link-content .image-attribution {
+    position: absolute;
+    z-index: 2;
+    --fontScale: 0.6;
+    font-size: calc(var(--extra-small) * var(--fontScale));
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness)) !important;
+    background-color: var(--text) !important;
+    --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness)) !important;
+    color: var(--background) !important;
+    position: absolute;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 0 var(--border-radius);
+    opacity: 0.75;
+    right: 0;
+    top: 0;
 }
 
 .article-link .article-link-content .article-link-title {

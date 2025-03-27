@@ -72,47 +72,11 @@ function Home() {
           </h3>
           <Carousel
             articleLinks={[
-              <ArticleLink
-                image={CarouselImage1}
-                title="Cool Isopod 1"
-                description="Cool Isopod 1"
-                link="/defaultarticle"
-                readTime={5}
-                publishDate="03/24/2025"
-                articleAuthor="Author Name"
-                compressed={false}
-              />,
-              <ArticleLink
-                image={CarouselImage2}
-                title="Cool Isopod 2"
-                description="Cool Isopod 2"
-                link="/defaultarticle"
-                readTime={5}
-                publishDate="03/24/2025"
-                articleAuthor="Author Name"
-                compressed={false}
-              />,
+              <ArticleLink article="porcellionides_pruinosus" compressed={false} />,
+              <ArticleLink article="porcellio_scaber" compressed={false} />,
               <ArticleLink article="armadillidium_vulgare" compressed={false} />,
-              <ArticleLink
-                image={CarouselImage4}
-                title="Cool Isopod 4"
-                description="Cool Isopod 4"
-                link="/defaultarticle"
-                readTime={5}
-                publishDate="03/24/2025"
-                articleAuthor="Author Name"
-                compressed={false}
-              />,
-              <ArticleLink
-                image={CarouselImage5}
-                title="Cool Isopod 5"
-                description="Cool Isopod 5"
-                link="/defaultarticle"
-                readTime={5}
-                publishDate="03/24/2025"
-                articleAuthor="Author Name"
-                compressed={false}
-              />,
+              <ArticleLink article="armadillidium_maculatum" compressed={false} />,,
+              <ArticleLink article="porcellionides_laevis" compressed={false} />
             ]}
             // automatic
           />

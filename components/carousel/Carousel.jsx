@@ -6,17 +6,18 @@ import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow.svg
 import { ReactComponent as IsopodBall } from "../../assets/icons/isopod-ball.svg";
 
 const Carousel = ({ articleLinks, automatic = false }) => {
+  const validArticleLinks = articleLinks.filter(Boolean); // Remove falsy values
   const centerIndex =
-    articleLinks.length >= 5 ? 2 : Math.floor(articleLinks.length / 2);
+    validArticleLinks.length >= 5 ? 2 : Math.floor(validArticleLinks.length / 2);
   const [currentIndex, setCurrentIndex] = useState(centerIndex);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % articleLinks.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % validArticleLinks.length);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? articleLinks.length - 1 : prevIndex - 1
+      prevIndex === 0 ? validArticleLinks.length - 1 : prevIndex - 1
     );
   };
 
@@ -25,18 +26,18 @@ const Carousel = ({ articleLinks, automatic = false }) => {
       const intervalId = setInterval(nextSlide, 3000);
       return () => clearInterval(intervalId);
     }
-  }, [automatic, articleLinks.length]);
+  }, [automatic, validArticleLinks.length]);
 
   const translateValue = (currentIndex - centerIndex) * -20;
 
   // Ensure each ArticleLink has the compressed prop set to true
-  const clonedArticleLinks = articleLinks.map((articleLink) => {
-    const props = articleLink.props || {};
-    if (props.compressed !== true) {
-      return React.cloneElement(articleLink, { compressed: true });
-    }
-    return articleLink;
-  });
+  const clonedArticleLinks = validArticleLinks.map((articleLink, index) => {
+    if (!React.isValidElement(articleLink)) return null;
+    return React.cloneElement(articleLink, {
+      compressed: true,
+      key: index,
+    });
+  }).filter(Boolean); // Remove any nulls from the mapping
 
   return (
     <div className="carousel">
@@ -52,14 +53,12 @@ const Carousel = ({ articleLinks, automatic = false }) => {
         >
           {clonedArticleLinks.map((articleLink, index) => {
             const isActive = index === currentIndex ? "active" : "";
-            // Pass carousel-item and active classes to the ArticleLink
             return React.cloneElement(articleLink, {
               className: `carousel-item ${isActive} ${
                 articleLink.props.className || ""
               }`,
-              key: index,
-              tabIndex: index === currentIndex ? "0" : "-1", // Only focusable when active
-              onFocus: () => setCurrentIndex(index), // Update index on focus
+              tabIndex: index === currentIndex ? "0" : "-1",
+              onFocus: () => setCurrentIndex(index),
             });
           })}
         </div>

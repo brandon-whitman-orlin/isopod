@@ -15,7 +15,7 @@
     object-fit: cover;
 }
 
-.hero .image-attribution {
+.hero .imageAttribution {
     --fontScale: 0.75;
     font-size: calc(var(--extra-small) * var(--fontScale));
     color: var(--background);
