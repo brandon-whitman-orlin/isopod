@@ -73,7 +73,7 @@ function Home() {
           <Carousel
             articleLinks={[
               <ArticleLink article="porcellionides_pruinosus" compressed={false} />,
-              <ArticleLink article="porcellio_scaber" compressed={false} />,
+              <ArticleLink article="porcellionides_scaber" compressed={false} />,
               <ArticleLink article="armadillidium_vulgare" compressed={false} />,
               <ArticleLink article="armadillidium_maculatum" compressed={false} />,,
               <ArticleLink article="porcellionides_laevis" compressed={false} />
