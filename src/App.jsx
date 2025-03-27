@@ -10,11 +10,11 @@ import Affiliate from "../pages/affiliate/Affiliate";
 import Collaborate from "../pages/collaborate/Collaborate";
 import DefaultArticle from "../pages/defaultarticle/DefaultArticle";
 
-import Armadillidium_vulgare from "../src/articles/armadillidium_vulgare/armadillidium_vulgare.jsx";
-import Armadillidium_maculatum from "../src/articles/armadillidium_maculatum/armadillidium_maculatum.jsx";
-import Porcellionides_scaber from "../src/articles/porcellionides_scaber/porcellionides_scaber.jsx";
-import Porcellionides_pruinosus from "../src/articles/porcellionides_pruinosus/porcellionides_pruinosus.jsx";
-import Porcellionides_laevis from "../src/articles/porcellionides_laevis/porcellionides_laevis.jsx";
+import Armadillidium_vulgare from "../articles/armadillidium_vulgare/armadillidium_vulgare.jsx";
+import Armadillidium_maculatum from "../articles/armadillidium_maculatum/armadillidium_maculatum.jsx";
+import Porcellionides_scaber from "../articles/porcellionides_scaber/porcellionides_scaber.jsx";
+import Porcellionides_pruinosus from "../articles/porcellionides_pruinosus/porcellionides_pruinosus.jsx";
+import Porcellionides_laevis from "../articles/porcellionides_laevis/porcellionides_laevis.jsx";
 
 import "./App.css"; // Ensure global styles are imported
 
