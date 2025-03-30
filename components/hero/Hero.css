@@ -23,7 +23,7 @@
     bottom: 0;
     right: 0;
     padding: 0.25rem 0.75rem 0.25rem 0.5rem;
-    /* background-color: var(--text); */
+    background-color: var(--text);
     border-top-left-radius: var(--border-radius);
     text-shadow: 0.25rem 0.25rem 0.25rem hsl(var(--textHue), var(--textSaturation), var(--textLightness));
 }

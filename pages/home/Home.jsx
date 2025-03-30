@@ -17,6 +17,8 @@ import CarouselImage3 from "../../assets/images/carousel3.jpg";
 import CarouselImage4 from "../../assets/images/carousel4.jpg";
 import CarouselImage5 from "../../assets/images/carousel5.jpg";
 
+import HorizontalSlider from "../../components/horizontalslider/HorizontalSlider";
+
 import ArticleLink from "../../components/article/ArticleLink";
 
 import ArticleImage1 from "../../assets/images/articleimage1.jpg";
@@ -70,13 +72,13 @@ function Home() {
           <h3>
             These are just a few species, for more, see our <a href="/species" rel="noopener noreferrer">species profiles</a>
           </h3>
-          <Carousel
+          <HorizontalSlider
             articleLinks={[
-              <ArticleLink article="porcellionides_pruinosus" compressed={false} />,
-              <ArticleLink article="porcellionides_scaber" compressed={false} />,
-              <ArticleLink article="armadillidium_vulgare" compressed={false} />,
-              <ArticleLink article="armadillidium_maculatum" compressed={false} />,
-              <ArticleLink article="porcellionides_laevis" compressed={false} />
+              <ArticleLink care="porcellionides_pruinosus" compressed={false} />,
+              <ArticleLink care="porcellionides_scaber" compressed={false} />,
+              <ArticleLink care="armadillidium_vulgare" compressed={false} />,
+              <ArticleLink care="armadillidium_maculatum" compressed={false} />,
+              <ArticleLink care="porcellionides_laevis" compressed={false} />
             ]}
             // automatic
             // a
@@ -85,7 +87,7 @@ function Home() {
         <PageSection>
           <h2>In the News</h2>
           <h3>Important Isopod Updates</h3>
-          <ArticleLink
+          {/* <ArticleLink
             image={ArticleImage1}
             title="Exciting Isopod News"
             description="A super cool article on Isopods"
@@ -93,16 +95,9 @@ function Home() {
             readTime={5}
             publishDate={"03/24/2025"}
             articleAuthor={"Dr. Isopod"}
-          />
-          <ArticleLink
-            image={ArticleImage2}
-            title="More exciting Isopod News"
-            description="Another super cool article on Isopods"
-            link="/defaultarticle"
-            readTime={4}
-            publishDate={"02/21/2025"}
-            articleAuthor={"Dr. Isopod"}
-          />
+          /> */}
+          <ArticleLink article="isopods_101" compressed={false} />
+          <ArticleLink article="beginner_isopods" compressed={false} />
           <p>Want more? Find more articles <a href="/articles" rel="noopener noreferrer">here</a>!</p>
         </PageSection>
         <PageSection>

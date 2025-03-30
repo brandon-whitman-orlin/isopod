@@ -7,7 +7,8 @@ import { ReactComponent as CalendarIcon } from "../../assets/icons/calendar.svg"
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 
 const ArticleLink = ({
-  article, // Optional dynamic article folder
+  article,
+  care,
   image,
   title,
   description,
@@ -22,11 +23,14 @@ const ArticleLink = ({
   const [articleData, setArticleData] = useState(null);
 
   useEffect(() => {
-    if (article) {
+    const folder = article ? "articles" : care ? "care" : null;
+    const item = article || care;
+
+    if (folder && item) {
       const fetchArticleData = async () => {
         try {
-          const jsonData = await import(`../../articles/${article}/${article}.json`);
-          const image = await import(`../../articles/${article}/assets/thumbnail.jpg`);
+          const jsonData = await import(`../../${folder}/${item}/${item}.json`);
+          const image = await import(`../../${folder}/${item}/assets/thumbnail.jpg`);
 
           setArticleData({ ...jsonData.default, image: image.default });
         } catch (error) {
@@ -35,9 +39,9 @@ const ArticleLink = ({
       };
       fetchArticleData();
     }
-  }, [article]);
+  }, [article, care]);
 
-  const finalData = articleData || { image, title, description, link, readTime, publishDate, articleAuthor};
+  const finalData = articleData || { image, title, description, link, readTime, publishDate, articleAuthor };
 
   if (!finalData.title || !finalData.link) return null;
 
@@ -59,10 +63,6 @@ const ArticleLink = ({
                 <CalendarIcon className="calendar-icon" />
                 {finalData.publishDate && <span className="article-link-publish-date">{finalData.publishDate}</span>}
               </div>
-              {/* <div className="article-link-author-wrapper">
-                <UserIcon className="user-icon" />
-                {finalData.articleAuthor && <span className="article-link-author">{finalData.articleAuthor}</span>}
-              </div> */}
             </div>
           </>
         )}
@@ -73,6 +73,7 @@ const ArticleLink = ({
 
 ArticleLink.propTypes = {
   article: PropTypes.string,
+  care: PropTypes.string,
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,

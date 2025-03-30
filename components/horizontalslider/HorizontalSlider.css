@@ -1,0 +1,35 @@
+
+.horizontal-slider-wrapper {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: visible;
+    padding-block: 1rem;
+    display: block;
+}
+
+.horizontal-slider {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    width: 150vw;
+    gap: 3rem;
+    padding-inline: 2rem;
+}
+
+.horizontal-slider .article-link {
+    align-self: center;
+    display: block;
+}
+
+.horizontal-slider .article-link .article-link-title {
+    text-align: center !important;
+}
+
+
+
+@media screen and (max-width: 1151px) {
+    .horizontal-slider .article-link .article-link-title {
+        word-spacing: 100vw;
+    }
+}
