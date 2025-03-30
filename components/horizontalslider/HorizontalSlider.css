@@ -14,7 +14,7 @@
     grid-auto-flow: column;
     width: 150vw;
     gap: calc(500px - 45vw);
-    padding-inline: 2rem;
+    padding-right: 2rem;
 }
 
 .horizontal-slider .article-link {
