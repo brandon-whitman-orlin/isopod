@@ -54,7 +54,8 @@
 }
 
 .main a h4, .main p a, .main h3 a {
-    text-decoration: underline currentColor;
+    text-decoration: underline currentColor !important;
+    -webkit-text-decoration: underline currentColor !important;
 }
 
 .footer {
