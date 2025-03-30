@@ -13,7 +13,7 @@
     grid-auto-rows: 1fr;
     grid-auto-flow: column;
     width: 150vw;
-    gap: calc(500px - 75vw);
+    gap: calc(500px - 55vw);
     padding-inline: 2rem;
 }
 
