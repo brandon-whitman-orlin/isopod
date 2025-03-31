@@ -63,11 +63,11 @@ function Home() {
           </h3>
           <HorizontalSlider
             articleLinks={[
-              <ArticleLink care="porcellionides_pruinosus" compressed={false} />,
-              <ArticleLink care="porcellionides_scaber" compressed={false} />,
-              <ArticleLink care="armadillidium_vulgare" compressed={false} />,
-              <ArticleLink care="armadillidium_maculatum" compressed={false} />,
-              <ArticleLink care="porcellionides_laevis" compressed={false} />
+              <ArticleLink species="porcellionides_pruinosus" compressed={false} />,
+              <ArticleLink species="porcellio_scaber" compressed={false} />,
+              <ArticleLink species="armadillidium_vulgare" compressed={false} />,
+              <ArticleLink species="armadillidium_maculatum" compressed={false} />,
+              <ArticleLink species="porcellio_laevis" compressed={false} />
             ]}
             // automatic
             // a

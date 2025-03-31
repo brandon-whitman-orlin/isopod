@@ -25,8 +25,25 @@
     object-position: top;
 }
 
+.display-grid.identical {
+    max-width: 80%;
+}
+
 .display-grid.identical .display-grid-item {
     flex: 1 1 0px;
     align-self: stretch;
     align-items: unset;
+    min-width: min(100vw, 300px);
+}
+
+.display-grid .display-grid-item:first-of-type:has(.article-link) {
+    width: 100%;
+    max-width: 100%;
+    flex: unset;
+}
+
+@media screen and (max-width: 500px) {
+    .display-grid.identical {
+        max-width: 100%;
+    }
 }

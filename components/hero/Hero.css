@@ -39,10 +39,12 @@
 .hero .hero-content h1 {
     --fontScale: 1.3;
     font-size: calc(var(--extra-extra-extra-extra-large) * var(--fontScale));
+    text-shadow: 0.5rem 0.5rem 0.25rem hsl(var(--textHue), var(--textSaturation), var(--textLightness));
 }
 
 .hero .hero-content h2 {
     font-size: calc(var(--extra-extra-extra-large) * var(--fontScale));
+    text-shadow: 0.5rem 0.25rem 0.25rem hsl(var(--textHue), var(--textSaturation), var(--textLightness));
 }
 
 @media screen and (max-width: 1000px) {

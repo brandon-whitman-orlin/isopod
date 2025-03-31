@@ -7,8 +7,9 @@ import { ReactComponent as CalendarIcon } from "../../assets/icons/calendar.svg"
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 
 const ArticleLink = ({
-  article,
-  care,
+  article, 
+  care, 
+  species,
   image,
   title,
   description,
@@ -21,25 +22,25 @@ const ArticleLink = ({
   tabIndex
 }) => {
   const [articleData, setArticleData] = useState(null);
+  
+  const folder = species ? "species" : care ? "care" : article ? "articles" : null;
+  const fileName = species || care || article;
 
   useEffect(() => {
-    const folder = article ? "articles" : care ? "care" : null;
-    const item = article || care;
-
-    if (folder && item) {
+    if (fileName && folder) {
       const fetchArticleData = async () => {
         try {
-          const jsonData = await import(`../../${folder}/${item}/${item}.json`);
-          const image = await import(`../../${folder}/${item}/assets/thumbnail.jpg`);
+          const jsonData = await import(`../../${folder}/${fileName}/${fileName}.json`);
+          const image = await import(`../../${folder}/${fileName}/assets/thumbnail.jpg`);
 
           setArticleData({ ...jsonData.default, image: image.default });
         } catch (error) {
-          console.error("Error loading article data:", error);
+          console.error(`Error loading ${folder} data:`, error);
         }
       };
       fetchArticleData();
     }
-  }, [article, care]);
+  }, [fileName, folder]);
 
   const finalData = articleData || { image, title, description, link, readTime, publishDate, articleAuthor };
 
@@ -74,6 +75,7 @@ const ArticleLink = ({
 ArticleLink.propTypes = {
   article: PropTypes.string,
   care: PropTypes.string,
+  species: PropTypes.string,
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
