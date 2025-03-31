@@ -1,0 +1,32 @@
+.display-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-grid .display-grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-grid .display-grid-item:first-of-type:has(.biography) {
+    width: 100%;
+    max-width: 100%;
+}
+
+.display-grid .display-grid-item:first-of-type:has(.biography) .biography {
+    max-width: 500px;
+}
+
+.display-grid .display-grid-item:first-of-type:has(.biography) .biography .biography-image {
+    object-position: top;
+}
+
+.display-grid.identical .display-grid-item {
+    flex: 1 1 0px;
+    align-self: stretch;
+    align-items: unset;
+}

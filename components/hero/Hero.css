@@ -53,7 +53,7 @@
 
 @media screen and (max-width: 400px) {
     .hero .hero-image {
-        object-position: 35%;
+        object-position: var(--backgroundPos);
     }
 
     .hero .hero-content {

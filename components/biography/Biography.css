@@ -1,0 +1,110 @@
+.biography {
+    display: grid;
+    grid-auto-flow: row;
+    border-radius: var(--border-radius);
+    max-width: 400px;
+    place-items: center;
+    padding: 1rem;
+}
+
+.biography .biography-image {
+    border-radius: var(--border-radius);
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.biography .biography-title {
+    background-color: var(--primary);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    color: var(--background);
+    font-size: var(--medium);
+}
+
+.biography .biography-description {
+    padding: 1rem;
+}
+
+.biography .biography-link {
+    padding: 1rem;
+    font-weight: 900;
+    --fontScale: 0.8;
+    font-size: calc(var(--medium) * var(--fontScale));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.biography .biography-link span {
+    padding-left: 0.5rem;
+    color: var(--background);
+}
+
+.biography .biography-link img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    /* -webkit-box-shadow: 0px 0px 0.5rem 0.25rem hsl(var(--textHue), var(--textSaturation), var(--textLightness), 25%); 
+    box-shadow: 0px 0px 0.5rem 0.25rem hsl(var(--textHue), var(--textSaturation), var(--textLightness), 25%); */
+}
+
+.biography .biography-link .arrow {
+    background-image: url(/assets/icons/arrow.png);
+    position: relative;
+    height: 1.5rem;
+    width: 0rem;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    background-position: 100% 50%;
+}
+
+.biography .biography-link:hover .arrow {
+    width: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.biography .biography-link.reddit {
+    background-color: hsl(16, 100%, 50%);
+}
+
+.biography .biography-link.linkedin {
+    background-color: hsl(200, 100%, 35%);
+}
+
+@media screen and (max-width: 500px) {
+    .biography-link span {
+        font-weight: 500;
+        --fontScale: 0.8;
+        font-size: calc(var(--medium) * var(--fontScale));
+    }
+
+    .biography .biography-link img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .biography .biography-link .arrow {
+        height: 1rem;
+        background-size: 1rem 1rem;
+        background-position: 100% 50%;
+    }
+
+    .biography .biography-link span {
+        padding-left: 0.25rem;
+    }
+
+    .biography .biography-link:hover .arrow {
+        width: 1rem;
+        margin-left: 0.25rem;
+    }
+}

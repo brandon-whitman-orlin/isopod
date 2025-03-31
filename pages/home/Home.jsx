@@ -2,27 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 
 import Navbar from "../../components/navbar/Navbar";
-import ThemeChange from "../../components/themechange/ThemeChange";
 import ThemeMenu from "../../components/themechange/ThemeMenu";
 import Hero from "../../components/hero/Hero";
 
-import HeroImage from "../../assets/images/hero.jpg";
+import HeroImage from "../../assets/images/home-hero.jpg";
 
 import PageSection from "../../components/pagesection/PageSection";
-import Carousel from "../../components/carousel/Carousel";
-
-import CarouselImage1 from "../../assets/images/carousel1.jpg";
-import CarouselImage2 from "../../assets/images/carousel2.jpg";
-import CarouselImage3 from "../../assets/images/carousel3.jpg";
-import CarouselImage4 from "../../assets/images/carousel4.jpg";
-import CarouselImage5 from "../../assets/images/carousel5.jpg";
 
 import HorizontalSlider from "../../components/horizontalslider/HorizontalSlider";
 
 import ArticleLink from "../../components/article/ArticleLink";
-
-import ArticleImage1 from "../../assets/images/articleimage1.jpg";
-import ArticleImage2 from "../../assets/images/articleimage2.jpg";
 
 import WebFooter from "../../components/webfooter/WebFooter";
 
@@ -58,7 +47,7 @@ function Home() {
         />
       </header>
       <main className="main">
-        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Ed Alfonso">
+        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Ed Alfonso" objectPos="35%">
           <h1>Niceopods</h1>
           <h2>The #1 resource for Isopod Enthusiasts</h2>
         </Hero>

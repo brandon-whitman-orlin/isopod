@@ -14,26 +14,6 @@
     overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-    .home {
-        background-image: url('/assets/images/background-dark.svg');
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    .home {
-        background-image: url('/assets/images/background-light.svg');
-    }
-}
-
-:root.theme-dark .home {
-        background-image: url('/assets/images/background-dark.svg');
-}
-
-:root.theme-light .home {
-        background-image: url('/assets/images/background-light.svg');
-}
-
 .header {
     width: 100%;
     position: fixed;
