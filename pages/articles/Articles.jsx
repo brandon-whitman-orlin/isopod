@@ -18,17 +18,54 @@ import { ReactComponent as IsopodLogo } from "../../assets/icons/isopod-ball-eye
 function Articles() {
   const [articles, setArticles] = useState([]);
 
+  // Function to convert "MM-DD-YYYY" → "YYYY-MM-DD" for correct sorting
+  function parseDate(dateStr) {
+    const match = dateStr.match(/^(\d{2})-(\d{2})-(\d{4})$/); // Matches "MM-DD-YYYY"
+    if (match) {
+      const [, month, day, year] = match;
+      return `${year}-${month}-${day}`; // Convert to "YYYY-MM-DD"
+    }
+    return dateStr; // If already formatted correctly, return as is
+  }
+
   useEffect(() => {
-    // Vite's import.meta.glob fetches files matching the pattern
-    const articlesGlob = import.meta.glob("../../articles/*/*.json");
+    const fetchArticles = async () => {
+      const articlesGlob = import.meta.glob("../../articles/*/*.json");
+      const articleEntries = Object.entries(articlesGlob);
 
-    // Extract folder names from paths
-    const articleFolders = Object.keys(articlesGlob).map((path) => {
-      const match = path.match(/\/articles\/([^/]+)\//);
-      return match ? match[1] : null;
-    }).filter(Boolean); // Remove null values
+      console.log("Fetching articles from JSON files...");
 
-    setArticles(articleFolders);
+      const articleDataPromises = articleEntries.map(async ([path, importFunc]) => {
+        const match = path.match(/\/articles\/([^/]+)\//);
+        const folderName = match ? match[1] : null;
+
+        if (!folderName) return null;
+
+        try {
+          const data = await importFunc();
+          const rawDate = data.default.publishDate || "01-01-1970"; // Default if missing
+          const publishDate = parseDate(rawDate);
+
+          console.log(`Loaded: ${folderName}, Date: ${rawDate} -> Parsed: ${publishDate}`);
+
+          return { folderName, publishDate };
+        } catch (error) {
+          console.error(`Error loading ${folderName}:`, error);
+          return null;
+        }
+      });
+
+      const articleData = (await Promise.all(articleDataPromises)).filter(Boolean);
+
+      // Sort articles by date (newest first)
+      articleData.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+      console.log("Sorted articles:", articleData.map(a => `${a.folderName}: ${a.publishDate}`));
+
+      setArticles(articleData.map(({ folderName }) => folderName));
+    };
+
+    fetchArticles();
   }, []);
 
   return (

@@ -12,6 +12,7 @@ import DisplayGrid from "../../components/displaygrid/DisplayGrid";
 import Biography from "../../components/biography/Biography";
 
 import Brandon from "../../assets/images/brandon.jpg";
+import Ellie from "../../assets/images/ellie.jpg";
 
 import CarouselImage1 from "../../assets/images/carousel1.jpg";
 import CarouselImage2 from "../../assets/images/carousel2.jpg";
@@ -70,18 +71,18 @@ function About() {
               linkType={"LinkedIn"}
             />
             <Biography
-              img={CarouselImage1}
-              name="Steve"
-              title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
-              link="https://www.reddit.com/r/isopods/"
-              linkType={"Reddit"}
+              img={Ellie}
+              name="Ellie"
+              title="Digital Artist"
+              desc="Ellie has designed several digital assets for the Niceopods website."
+              link="https://www.linkedin.com/in/e-murray02/"
+              linkType={"LinkedIn"}
             />
             <Biography
               img={CarouselImage2}
               name="Joe"
               title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
+              desc="Joe has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
             />
@@ -89,7 +90,7 @@ function About() {
               img={CarouselImage3}
               name="Bob"
               title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
+              desc="Bob has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
             />
@@ -97,7 +98,7 @@ function About() {
               img={CarouselImage4}
               name="Joan"
               title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
+              desc="Joan has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
             />
@@ -105,7 +106,7 @@ function About() {
               img={CarouselImage5}
               name="Sandy"
               title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
+              desc="Sandy has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
             />
@@ -113,7 +114,7 @@ function About() {
               img={CarouselImage6}
               name="Anna"
               title="Photographer"
-              desc="Steve has helped support Niceopods by providing licensing for photographs they have taken."
+              desc="Anna has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
             />

@@ -9,7 +9,7 @@
 .display-grid .display-grid-item {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: stretch;
 }
 
 .display-grid .display-grid-item:first-of-type:has(.biography) {
@@ -30,7 +30,6 @@
 }
 
 .display-grid.identical .display-grid-item {
-    flex: 1 1 0px;
     align-self: stretch;
     align-items: unset;
     min-width: min(100vw, 300px);
