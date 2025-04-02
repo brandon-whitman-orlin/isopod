@@ -33,12 +33,20 @@
     align-self: stretch;
     align-items: unset;
     min-width: min(100vw, 300px);
+    /* flex: 1 1 0px; */
+
+    flex: 0 0 auto;
+    max-width: 45%;
 }
 
 .display-grid .display-grid-item:first-of-type:has(.article-link) {
     width: 100%;
     max-width: 100%;
     flex: unset;
+}
+
+.display-grid .display-grid-item:first-of-type:has(.article-link) .article-link {
+    max-width: 700px;
 }
 
 @media screen and (max-width: 500px) {

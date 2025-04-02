@@ -43,7 +43,7 @@ function Affiliate() {
         />
       </header>
       <main className="main">
-        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Twosistersinthewild" objectPos="25%">
+        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Twosistersinthewild" objectPos="15%">
           <h1>Affiliate Links</h1>
           <h2>Supplies We Trust</h2>
         </Hero>
