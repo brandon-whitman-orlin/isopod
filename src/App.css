@@ -134,7 +134,7 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
-svg path {
+svg:not(.default-color) path {
   fill: var(--customFill, currentColor);
 }
 

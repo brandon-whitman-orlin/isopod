@@ -1,0 +1,82 @@
+.isopod-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.isopod-stats span {
+    font-family: system-ui, sans-serif;
+}
+
+.isopod-stats svg {
+    width: 2rem;
+    height: 2rem;
+    background-color: hsl(var(--secondaryHue), var(--secondarySaturation), 85%);
+    border-radius: 100%;
+    padding: 0.3rem;
+    -webkit-filter: drop-shadow(0.25rem 0.25rem 0.1rem hsla(var(--textHue), var(--textSaturation), var(--textLightness), 0.5));
+    filter: drop-shadow(0.25rem 0.25rem 0.1rem hsla(var(--textHue), var(--textSaturation), var(--textLightness), 0.5));
+}
+
+.isopod-stats ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.15rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: hsl(var(--primaryHue), var(--primarySaturation), 35%);
+    border: 0.15rem solid hsl(var(--primaryHue), var(--primarySaturation), 35%);
+}
+
+.isopod-stats li {
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center;
+    flex: 1 1 0px;
+}
+
+.isopod-stats li .stat-label {
+    background-color: var(--primary);
+    display: grid;
+    place-items: center;
+    padding: 0.5rem 3rem;
+    width: 100%;
+}
+
+.isopod-stats li .stat-value {
+    background-color: var(--secondary);
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+    text-transform: capitalize;
+    gap: 0.25rem;
+    position: relative;
+}
+
+.isopod-stats svg.color circle {
+    fill: var(--isopodColor);
+}
+
+.isopod-stats svg.small {
+    padding: 0.6rem;
+}
+
+.isopod-stats svg.medium {
+    padding: 0.4rem;
+}
+
+.isopod-stats svg.large {
+    padding: 0.2rem;
+}
+
+.isopod-stats svg.average-price:nth-child(2) {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    transform: translateX(0.5rem);
+}

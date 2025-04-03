@@ -6,5 +6,10 @@
     "articleAuthor": "Brandon",
     "readTime": "4",
     "imageAttribution": "Ryan Hodnett",
-    "attributioFull": "\"Common Pill Woodlouse (Armadillidium vulgare) - Guelph, Ontario 02\" by Ryan Hodnett is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse."
+    "attributioFull": "\"Common Pill Woodlouse (Armadillidium vulgare) - Guelph, Ontario 02\" by Ryan Hodnett is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.",
+    "difficulty" : "easy",
+    "price" : "low",
+    "size" : "medium",
+    "hardiness" : "hardy",
+    "color" : "gray"
 }
