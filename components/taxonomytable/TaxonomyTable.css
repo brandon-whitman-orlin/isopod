@@ -1,0 +1,43 @@
+.taxonomy-table {
+    padding: 1rem;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px;
+    padding: 2px;
+    border: 2px solid hsl(var(--accentHue), var(--accentSaturation), 45%);;
+    background-color: hsl(var(--accentHue), var(--accentSaturation), 45%);
+    border-radius: var(--border-radius);
+}
+
+.taxonomy-cell {
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.taxonomy-level {
+    font-weight: 700;
+    background-color: var(--accent);
+}
+
+.taxonomy-level:nth-child(1) {
+    border-top-left-radius: calc(var(--border-radius) - 0.25rem);
+}
+
+.taxonomy-cell:nth-child(2) {
+    border-top-right-radius: calc(var(--border-radius) - 0.25rem);
+}
+
+.taxonomy-cell:nth-last-of-type(2) {
+    border-bottom-left-radius: calc(var(--border-radius) - 0.25rem);
+}
+
+.taxonomy-cell:last-of-type {
+    border-bottom-right-radius: calc(var(--border-radius) - 0.25rem);
+}
+
+.taxonomy-value {
+    background-color: hsl(var(--accentHue), var(--accentSaturation), 75%);
+}

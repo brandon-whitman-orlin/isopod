@@ -1,0 +1,43 @@
+.article-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    height: fit-content;
+    padding: 1rem;
+}
+
+.article-image-img {
+    position: relative;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.article-image-description {
+    width: 100%;
+    color: var(--background);
+    padding: 0.25rem;
+    background-color: var(--text);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    text-align: center !important;
+}
+
+.article-image-source {
+    position: absolute;
+    z-index: 2;
+    --fontScale: 0.7;
+    font-size: calc(var(--extra-small)* var(--fontScale));
+    --text: hsl(var(--textHue), var(--textSaturation), var(--textLightness)) !important;
+    background-color: var(--text) !important;
+    --background: hsl(var(--backgroundHue), var(--backgroundSaturation), var(--backgroundLightness)) !important;
+    color: var(--background) !important;
+    position: absolute;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 0 var(--border-radius);
+    opacity: 0.75;
+    right: 1rem;
+    top: 1rem;
+    max-width: 90%;
+}
