@@ -16,6 +16,7 @@ import ArticleImage7 from "./assets/armadillidium_vulgare_9.jpg";
 import ArticleImage8 from "./assets/armadillidium_vulgare_10.jpg";
 import ArticleImage9 from "./assets/armadillidium_vulgare_11.jpg";
 import ArticleImage10 from "./assets/armadillidium_vulgare_12.jpg";
+import ArticleImage11 from "./assets/armadillidium_vulgare_13.jpg";
 
 import PageSection from "../../components/pagesection/PageSection";
 import IsopodStats from "../../components/isopodstats/IsopodStats";
@@ -124,7 +125,7 @@ function Armadillidium_vulgare() {
             <ArticleImage
                 image={ArticleImage8}
                 description='Armadillidium vulgare "High Yellow"'
-                source="Redditor LittleArmouredOne"
+                source="Redditor u/LittleArmouredOne"
             />
           </ArticleImages>
         </PageSection>
@@ -164,9 +165,9 @@ function Armadillidium_vulgare() {
           />
           <p>Pill bugs typically reproduce in the spring, with females capable of producing up to three groups of offspring (broods) per year, each containing anywhere from 20 to 160 eggs at a time. These eggs develop in a fluid-filled brood pouch called the marsupium, located on the underside of the female's body. After hatching, the young remain in the pouch for 1 to 2 months before emerging as a small versions of the adult (mancas).</p>
           <ArticleImage
-            image={null}
-            description="Baby isopods (mancae)"
-            source="Nobody yet"
+            image={ArticleImage11}
+            description='A mature Armadillidium vulgare "Magic Potion" isopod, next to a young juvenile (manca)'
+            source="Brandon (Myself)"
           />
           <p>These isopods are quite hardy, tolerating a relatively wide range of temperatures and humidity levels. However, like all crustacean, they are susceptible to dehydration and require a moist environment to thrive. In captivity, maintaining an appropriate moisture gradient is essential to prevent dehydration. Pill bugs usually live for one-two years.</p>
           <ArticleImage
