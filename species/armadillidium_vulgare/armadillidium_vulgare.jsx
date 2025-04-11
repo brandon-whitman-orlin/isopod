@@ -61,7 +61,7 @@ function Armadillidium_vulgare() {
         />
       </header>
       <main className="main">
-        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Franco Folini" objectPos="90%">
+        <Hero img={HeroImage} alt="High-definition image of an Armadillidium vulgare isopod" attribution="Franco Folini" objectPos="100%">
           <h1>Armadillidium vulgare</h1>
           <h2>(Wild Type)</h2>
         </Hero>
