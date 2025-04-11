@@ -13,6 +13,7 @@ import Biography from "../../components/biography/Biography";
 
 import Brandon from "../../assets/images/brandon.jpg";
 import Ellie from "../../assets/images/ellie.jpg";
+import LittleArmouredOne from "../../assets/images/u-LittleArmouredOne.jpg";
 
 import CarouselImage1 from "../../assets/images/carousel1.jpg";
 import CarouselImage2 from "../../assets/images/carousel2.jpg";
@@ -79,11 +80,11 @@ function About() {
               linkType={"LinkedIn"}
             />
             <Biography
-              img={CarouselImage2}
-              name="Joe"
+              img={LittleArmouredOne}
+              name="u/LittleArmouredOne"
               title="Photographer"
-              desc="Joe has helped support Niceopods by providing licensing for photographs they have taken."
-              link="https://www.reddit.com/r/isopods/"
+              desc="u/LittleArmouredOne has helped support Niceopods by providing licensing for photographs they have taken."
+              link="https://www.reddit.com/user/LittleArmouredOne/"
               linkType={"Reddit"}
             />
             <Biography
