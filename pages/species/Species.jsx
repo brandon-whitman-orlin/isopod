@@ -15,20 +15,40 @@ import WebFooter from "../../components/webfooter/WebFooter";
 
 import { ReactComponent as IsopodLogo } from "../../assets/icons/isopod-ball-eyes.svg";
 
+
 function Species() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    // Vite's import.meta.glob fetches files matching the pattern
-    const articlesGlob = import.meta.glob("../../species/*/*.json");
+    const articlesGlob = import.meta.glob("../../species/*/*.json", { eager: true });
 
-    // Extract folder names from paths
-    const articleFolders = Object.keys(articlesGlob).map((path) => {
+    const articlesList = Object.keys(articlesGlob).map((path) => {
+      const articleData = articlesGlob[path];
       const match = path.match(/\/species\/([^/]+)\//);
-      return match ? match[1] : null;
-    }).filter(Boolean); // Remove null values
+      const folder = match ? match[1] : null;
+      return folder ? { ...articleData, folder } : null;
+    }).filter(Boolean);
 
-    setArticles(articleFolders);
+    // Helper to parse dates
+    const parseDate = (dateString) => {
+      const [month, day, year] = dateString.split("-").map(Number);
+      return new Date(year, month - 1, day); // month is 0-indexed
+    };
+
+    articlesList.sort((a, b) => {
+      // Featured first
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      // In-progress last
+      if (a.inProgress && !b.inProgress) return 1;
+      if (!a.inProgress && b.inProgress) return -1;
+      // Otherwise, by publishDate newest first
+      const dateA = parseDate(a.publishDate);
+      const dateB = parseDate(b.publishDate);
+      return dateB - dateA;
+    });
+
+    setArticles(articlesList);
   }, []);
 
   return (
@@ -62,9 +82,19 @@ function Species() {
           <h2>Look At All These Different Isopods</h2>
           <h3>So Many Species So Little Time!</h3>
           <DisplayGrid identical={true}>
-            {articles.map((article) => (
-              <ArticleLink key={article} species={article} compressed={false} />
-            ))}
+            {articles.map((article) => {
+              const classes = [];
+              if (article.featured) classes.push("featured");
+              if (article.inProgress) classes.push("in-progress");
+              return (
+                <ArticleLink 
+                  key={article.folder} 
+                  species={article.folder} 
+                  compressed={false} 
+                  className={classes.join(" ")}
+                />
+              );
+            })}
           </DisplayGrid>
         </PageSection>
       </main>

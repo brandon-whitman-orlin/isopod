@@ -8,9 +8,10 @@ const DisplayGrid = ({ children, single, identical }) => {
   const gridClass = `display-grid ${single ? 'single-column' : ''} ${identical ? 'identical' : ''}`.trim();
 
   // Wrap each child with a .display-grid-item element
-  const wrappedChildren = React.Children.map(children, (child) => (
-    <div className="display-grid-item">{child}</div>
-  ));
+  const wrappedChildren = React.Children.map(children, (child) => {
+    const childClass = child.props?.className || '';
+    return <div className={`display-grid-item ${childClass}`.trim()}>{child}</div>;
+  });
 
   return <div className={gridClass}>{wrappedChildren}</div>;
 };

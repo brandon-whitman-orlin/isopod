@@ -11,5 +11,6 @@
     "price" : "low",
     "size" : "medium",
     "hardiness" : "hardy",
-    "color" : "gray"
+    "color" : "gray",
+    "featured" : true
 }

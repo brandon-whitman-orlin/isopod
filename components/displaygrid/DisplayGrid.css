@@ -37,6 +37,7 @@
 
     flex: 0 0 auto;
     max-width: 45%;
+    position: relative;
 }
 
 .display-grid .display-grid-item:first-of-type:has(.article-link) {
