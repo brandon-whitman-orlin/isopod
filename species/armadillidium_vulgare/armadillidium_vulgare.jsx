@@ -21,6 +21,7 @@ import ArticleImage12 from "./assets/armadillidium_vulgare_14.jpg";
 
 import PageSection from "../../components/pagesection/PageSection";
 import IsopodStats from "../../components/isopodstats/IsopodStats";
+import Contents from "../../components/contents/Contents";
 import ArticleImage from "../../components/article/ArticleImage";
 import ArticleImages from "../../components/article/ArticleImages";
 import TaxonomyTable from "../../components/taxonomytable/TaxonomyTable";
@@ -80,9 +81,14 @@ function Armadillidium_vulgare() {
           )}
         </PageSection>
         <PageSection>
+          <h2>Table of Contents</h2>
+          <h3>Skip to What You Need</h3>
+          <Contents />
+        </PageSection>
+        <PageSection>
           <h2>Introduction</h2>
           <h3>Armadillidium vulgare, At a Glance</h3>
-          <p>Meet the globe-trotting crustacean that's conquered backyards worldwide: Armadillidium vulgare. Also known as the "pill bug", "potato bug", or "roly-poly", these terrestrial crustaceans belonging to the woodlouse family. Armadillidium vulgare originates from the Mediterranean region of Europe, however this species has established populations worldwide. Armadillidium vulgare is most common in temperate climates across North America, Australia, and parts of Asia.</p>
+          <p>Meet the globe-trotting crustacean that's conquered backyards worldwide: Armadillidium vulgare. Also known as the "pill bug", "potato bug", or "roly-poly", these terrestrial crustaceans belong to the woodlouse family. Armadillidium vulgare originates from the Mediterranean region of Europe, however this species has established populations worldwide. Armadillidium vulgare is most common in temperate climates across North America, Australia, and parts of Asia.</p>
           <ArticleImage
             image={ArticleImage1}
             description="A brown Armadillidium vulgare isopod with light splotches"

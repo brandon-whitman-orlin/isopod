@@ -1,0 +1,10 @@
+.table-of-contents {
+    text-align: left;
+    font-size: var(--medium);
+    list-style: initial;
+    list-style-type: decimal !important;
+}
+
+.table-of-contents a {
+    padding-inline: 0.25rem;
+}

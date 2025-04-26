@@ -19,16 +19,31 @@ function Care() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    // Vite's import.meta.glob fetches files matching the pattern
-    const articlesGlob = import.meta.glob("../../care/*/*.json");
-
-    // Extract folder names from paths
-    const articleFolders = Object.keys(articlesGlob).map((path) => {
+    const careGlob = import.meta.glob("../../care/*/*.json", { eager: true });
+  
+    const careList = Object.keys(careGlob).map((path) => {
+      const careData = careGlob[path];
       const match = path.match(/\/care\/([^/]+)\//);
-      return match ? match[1] : null;
-    }).filter(Boolean); // Remove null values
-
-    setArticles(articleFolders);
+      const folder = match ? match[1] : null;
+      return folder ? { ...careData, folder } : null;
+    }).filter(Boolean);
+  
+    const parseDate = (dateString) => {
+      const [month, day, year] = dateString.split("-").map(Number);
+      return new Date(year, month - 1, day); // month is 0-indexed
+    };
+  
+    careList.sort((a, b) => {
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      if (a.inProgress && !b.inProgress) return 1;
+      if (!a.inProgress && b.inProgress) return -1;
+      const dateA = parseDate(a.publishDate);
+      const dateB = parseDate(b.publishDate);
+      return dateB - dateA;
+    });
+  
+    setArticles(careList);
   }, []);
 
   return (
@@ -62,9 +77,19 @@ function Care() {
           <h2>Who Cares About Isopods?</h2>
           <h3>We do! And you should too!</h3>
           <DisplayGrid identical={true}>
-            {articles.map((article) => (
-              <ArticleLink key={article} care={article} compressed={false} />
-            ))}
+            {articles.map((article) => {
+            const classes = [];
+            if (article.featured) classes.push("featured");
+            if (article.inProgress) classes.push("in-progress");
+            return (
+              <ArticleLink 
+                key={article.folder}
+                care={article.folder}
+                compressed={false}
+                className={classes.join(" ")}
+              />
+            );
+          })}
           </DisplayGrid>
         </PageSection>
       </main>

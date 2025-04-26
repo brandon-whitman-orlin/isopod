@@ -92,6 +92,7 @@ h1 {
 
 h2 {
   font-size: var(--extra-extra-extra-large);
+  scroll-margin-top: 5rem;
 }
 
 h3 {
@@ -118,6 +119,7 @@ small {
 
 * {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 ::selection {
@@ -207,9 +209,10 @@ ul, ol {
   padding-left: 0;
 }
 
+/* 
 .app-container section {
   overflow-x: hidden;
-}
+} */
 
 *::-webkit-scrollbar {
   width: 0.5rem;

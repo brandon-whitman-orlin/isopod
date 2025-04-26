@@ -22,7 +22,8 @@
 }
 
 .display-grid-item.in-progress .article-link .article-link-content::after{
-    content: 'ARTICLE COMING SOON';
+    --fontScale: 0.9;
+    content: 'COMING SOON';
     position: absolute;
     z-index: 2;
     background-color: hsl(0, 75%, var(--primaryLightness));
@@ -31,10 +32,12 @@
     font-weight: 700;
     display: grid;
     place-items: center;
-    width: 200%;
-    top: 25%;
-    transform: translateX(-25%) rotate(15deg);
-    transform-origin: center center;
+    width: fit-content;
+    top: 0%;
+    padding: 0.25rem;
+    font-size: calc(var(--medium) * var(--fontScale));
+    border-radius: var(--border-radius) 0;
+    border: 0.25rem solid hsl(var(--textHue), var(--textSaturation), var(--textLightness));;
 }
 
 .display-grid-item.featured .article-link .article-link-content::after{

@@ -18,55 +18,37 @@ import { ReactComponent as IsopodLogo } from "../../assets/icons/isopod-ball-eye
 function Articles() {
   const [articles, setArticles] = useState([]);
 
-  // Function to convert "MM-DD-YYYY" → "YYYY-MM-DD" for correct sorting
-  function parseDate(dateStr) {
-    const match = dateStr.match(/^(\d{2})-(\d{2})-(\d{4})$/); // Matches "MM-DD-YYYY"
-    if (match) {
-      const [, month, day, year] = match;
-      return `${year}-${month}-${day}`; // Convert to "YYYY-MM-DD"
-    }
-    return dateStr; // If already formatted correctly, return as is
-  }
-
   useEffect(() => {
-    const fetchArticles = async () => {
-      const articlesGlob = import.meta.glob("../../articles/*/*.json");
-      const articleEntries = Object.entries(articlesGlob);
-
-      console.log("Fetching articles from JSON files...");
-
-      const articleDataPromises = articleEntries.map(async ([path, importFunc]) => {
+      const articlesGlob = import.meta.glob("../../articles/*/*.json", { eager: true });
+  
+      const articlesList = Object.keys(articlesGlob).map((path) => {
+        const articleData = articlesGlob[path];
         const match = path.match(/\/articles\/([^/]+)\//);
-        const folderName = match ? match[1] : null;
-
-        if (!folderName) return null;
-
-        try {
-          const data = await importFunc();
-          const rawDate = data.default.publishDate || "01-01-1970"; // Default if missing
-          const publishDate = parseDate(rawDate);
-
-          console.log(`Loaded: ${folderName}, Date: ${rawDate} -> Parsed: ${publishDate}`);
-
-          return { folderName, publishDate };
-        } catch (error) {
-          console.error(`Error loading ${folderName}:`, error);
-          return null;
-        }
+        const folder = match ? match[1] : null;
+        return folder ? { ...articleData, folder } : null;
+      }).filter(Boolean);
+  
+      // Helper to parse dates
+      const parseDate = (dateString) => {
+        const [month, day, year] = dateString.split("-").map(Number);
+        return new Date(year, month - 1, day); // month is 0-indexed
+      };
+  
+      articlesList.sort((a, b) => {
+        // Featured first
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        // In-progress last
+        if (a.inProgress && !b.inProgress) return 1;
+        if (!a.inProgress && b.inProgress) return -1;
+        // Otherwise, by publishDate newest first
+        const dateA = parseDate(a.publishDate);
+        const dateB = parseDate(b.publishDate);
+        return dateB - dateA;
       });
-
-      const articleData = (await Promise.all(articleDataPromises)).filter(Boolean);
-
-      // Sort articles by date (newest first)
-      articleData.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-
-      console.log("Sorted articles:", articleData.map(a => `${a.folderName}: ${a.publishDate}`));
-
-      setArticles(articleData.map(({ folderName }) => folderName));
-    };
-
-    fetchArticles();
-  }, []);
+  
+      setArticles(articlesList);
+    }, []);
 
   return (
     <div className="articles">
@@ -99,9 +81,19 @@ function Articles() {
           <h2>Nice Isopod News</h2>
           <h3>Everything New in the World of Niceopods</h3>
           <DisplayGrid identical={true}>
-            {articles.map((article) => (
-              <ArticleLink key={article} article={article} compressed={false} />
-            ))}
+            {articles.map((article) => {
+              const classes = [];
+              if (article.featured) classes.push("featured");
+              if (article.inProgress) classes.push("in-progress");
+              return (
+                <ArticleLink 
+                  key={article.folder}
+                  article={article.folder}
+                  compressed={false}
+                  className={classes.join(" ")}
+                />
+              );
+            })}
           </DisplayGrid>
         </PageSection>
       </main>
