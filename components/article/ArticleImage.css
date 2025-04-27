@@ -13,12 +13,13 @@
     width: 100%;
     object-fit: cover;
     aspect-ratio: 1;
+    border: 1px solid hsl(var(--textHue), var(--textSaturation), var(--textLightness));
 }
 
 .article-image-description {
     width: 100%;
     color: var(--background);
-    padding: 0.25rem;
+    padding: 0.5rem;
     background-color: var(--text);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     text-align: center !important;
@@ -40,4 +41,14 @@
     right: 1rem;
     top: 1rem;
     max-width: 90%;
+}
+
+@media screen and (max-width: 700px) {
+    .article-image {
+        padding-inline: 0;
+    }
+
+    .article-image-source {
+        right: 0;
+    }
 }

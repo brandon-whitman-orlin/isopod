@@ -11,6 +11,6 @@
     "price" : "low",
     "size" : "medium",
     "hardiness" : "hardy",
-    "color" : "gray",
+    "color" : ["gray:#808080", "brown:#8B4513", "white:#F0F4F0", "multicolor"],
     "featured" : true
 }

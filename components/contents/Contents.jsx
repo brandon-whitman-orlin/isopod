@@ -22,7 +22,7 @@ const Contents = () => {
   
 
   return (
-    <ol className="table-of-contents" type="1">
+    <ol className="table-of-contents">
       {headings.map(({ text, id }) => (
         <li key={id}>
           <a href={`#${id}`}>{text}</a>
