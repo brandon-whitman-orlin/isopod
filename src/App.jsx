@@ -8,7 +8,7 @@ import Care from "../pages/care/Care";
 import Articles from "../pages/articles/Articles";
 import Affiliate from "../pages/affiliate/Affiliate";
 import Collaborate from "../pages/collaborate/Collaborate";
-import DefaultArticle from "../pages/defaultarticle/DefaultArticle";
+import NotFound from "../pages/notfound/NotFound";
 
 import Armadillidium_vulgare from "../species/armadillidium_vulgare/armadillidium_vulgare";
 import Armadillidium_maculatum from "../species/armadillidium_maculatum/armadillidium_maculatum";
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/articles" element={<Articles />} />
         <Route path="/affiliate" element={<Affiliate />} />
         <Route path="/collaborate" element={<Collaborate />} />
-        <Route path="/defaultarticle" element={<DefaultArticle />} />
+        <Route path="/notfound" element={<NotFound />} />
 
         <Route path="/species/armadillidium_vulgare" element={<Armadillidium_vulgare />} />
         <Route path="/species/armadillidium_maculatum" element={<Armadillidium_maculatum />} />
@@ -47,6 +47,9 @@ const App = () => {
 
         <Route path="/articles/isopods_101" element={<Isopods_101 />} />
         <Route path="/articles/beginner_isopods" element={<Beginner_Isopods />} />
+
+        {/* Catch-all route for unmatched URLs */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

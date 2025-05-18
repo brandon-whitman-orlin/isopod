@@ -1,0 +1,90 @@
+.not-found {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    min-height: 100%;
+    overflow-x: hidden;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.not-found .navbar {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: #00000080;
+}
+
+.not-found-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.not-found-h1 {
+    font-weight: 900;
+    font-size: min(16vw, 7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.not-found-h1 .hyphen {
+    padding-inline: 0.1ch;
+}
+
+.not-found-h1 .four-o-four {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.not-found-h1 .four-o-four .isopod-o {
+    width: 1.25ch;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.2s ease-in-out;
+    animation: spin 10s cubic-bezier(0.66, 0, 0.34, 1) infinite alternate;
+}
+
+@keyframes spin {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3600deg);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .not-found-h1 {
+        flex-direction: column;
+    }
+
+    .not-found-h1 .hyphen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 716px) {
+    .not-found-content {
+        margin-top: 6.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .not-found-h1 {
+        padding-bottom: 1rem;
+    }
+}
