@@ -31,7 +31,7 @@ function Collaborate() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbx_OLThI0MIHkyxk8LYWPGHRTJWbsamxSStNYwii9IPguGFr6qV0TzgO7wTTHpi6rokBQ/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxYXUTHvanrc4bhlbunapm7psvhY7Op43acSukikLHunYYRk72lThE5Q45D3OKyplTW3g/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
