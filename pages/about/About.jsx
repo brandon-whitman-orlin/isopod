@@ -13,6 +13,7 @@ import Biography from "../../components/biography/Biography";
 
 import Brandon from "../../assets/images/brandon.jpg";
 import Ellie from "../../assets/images/ellie.jpg";
+import Hiring from "../../assets/images/hiring.jpg";
 import LittleArmouredOne from "../../assets/images/u-LittleArmouredOne.jpg";
 
 import CarouselImage1 from "../../assets/images/carousel1.jpg";
@@ -75,7 +76,7 @@ function About() {
               img={Ellie}
               name="Ellie"
               title="Digital Artist"
-              desc="Ellie has designed several digital assets for the Niceopods website."
+              desc="Ellie has designed several digital assets for the Niceopods website, including our logo!"
               link="https://www.linkedin.com/in/e-murray02/"
               linkType={"LinkedIn"}
             />
@@ -88,14 +89,14 @@ function About() {
               linkType={"Reddit"}
             />
             <Biography
-              img={CarouselImage3}
-              name="Bob"
-              title="Photographer"
-              desc="Bob has helped support Niceopods by providing licensing for photographs they have taken."
-              link="https://www.reddit.com/r/isopods/"
-              linkType={"Reddit"}
+              img={Hiring}
+              name="This Could be You"
+              title="Let's Work Together"
+              desc="You can help Niceopods become a better place for isopod enthusiasts."
+              link="https://www.niceopods.com/collaborate"
+              linkType={"none"}
             />
-            <Biography
+            {/* <Biography
               img={CarouselImage4}
               name="Joan"
               title="Photographer"
@@ -118,7 +119,7 @@ function About() {
               desc="Anna has helped support Niceopods by providing licensing for photographs they have taken."
               link="https://www.reddit.com/r/isopods/"
               linkType={"Reddit"}
-            />
+            /> */}
           </DisplayGrid>
         </PageSection>
         <PageSection>

@@ -3,6 +3,7 @@ import './Biography.css';
 
 import LinkedInIcon from "../../assets/icons/linkedin.png";
 import RedditIcon from "../../assets/icons/reddit.png";
+import IsopodIcon from "../../assets/icons/isopod-ball.png";
 
 const Biography = ({ img, name, title, desc, link, linkType }) => {
   // Conditional class based on linkType
@@ -14,7 +15,9 @@ const Biography = ({ img, name, title, desc, link, linkType }) => {
       case 'linkedin':
         return `Connect with ${name}`;
       case 'reddit':
-        return `View ${name}'s Profile`;
+        return `${name}'s Profile`;
+      case 'none':
+        return 'Find out how here';
       default:
         return `Contact ${title}`;
     }
@@ -26,7 +29,7 @@ const Biography = ({ img, name, title, desc, link, linkType }) => {
       case 'linkedin':
         return (
           <>
-            <img src={LinkedInIcon}/>
+            <img src={LinkedInIcon} alt="LinkedIn icon" />
             <span>{linkText()}</span>
             <div className="arrow"></div>
           </>
@@ -34,7 +37,15 @@ const Biography = ({ img, name, title, desc, link, linkType }) => {
       case 'reddit':
         return (
           <>
-            <img src={RedditIcon}/>
+            <img src={RedditIcon} alt="Reddit icon" />
+            <span>{linkText()}</span>
+            <div className="arrow"></div>
+          </>
+        );
+      case 'none':
+        return (
+          <>
+            <img src={IsopodIcon} alt="Reddit icon" />
             <span>{linkText()}</span>
             <div className="arrow"></div>
           </>
