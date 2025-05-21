@@ -20,7 +20,7 @@ function Porcellio_scaber() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Porcellio scaber page is coming soon",
+            message: "Porcellio scaber page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });

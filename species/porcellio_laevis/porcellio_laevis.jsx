@@ -20,7 +20,7 @@ function Porcellio_laevis() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Porcellio laevis page is coming soon",
+            message: "Porcellio laevis page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });

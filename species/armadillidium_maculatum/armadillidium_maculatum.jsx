@@ -20,7 +20,7 @@ function Armadillidium_maculatum() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Armadillidium maculatum page is coming soon",
+            message: "Armadillidium maculatum page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });

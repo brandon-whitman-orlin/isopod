@@ -3,7 +3,7 @@ import "./DefaultArticle.css";
 
 function DefaultArticle() {
   return (
-    <p>This article is coming soon :D</p>
+    <p>This article is coming soon. :D</p>
   );
 }
 

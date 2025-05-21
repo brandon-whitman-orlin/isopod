@@ -11,12 +11,6 @@
     flex-direction: column;
 }
 
-.not-found .navbar {
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    background: #00000080;
-}
-
 .not-found-content {
     display: flex;
     justify-content: center;
@@ -24,6 +18,7 @@
     flex-direction: column;
     padding: 1rem;
     flex-grow: 1;
+    padding-bottom: 2rem;
 }
 
 .not-found-h1 {
@@ -63,6 +58,19 @@
   width: 100%;
   height: 100%;
   fill: currentColor; /* optional: ensure it's colored */
+}
+
+.navbar {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: hsl(0, 0%, 0%, 1);
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: hsl(0, 0%, 0%, 1);
+    --fontScale: 0.65;
 }
 
 @keyframes spin {

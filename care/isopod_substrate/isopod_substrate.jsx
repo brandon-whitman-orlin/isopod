@@ -20,7 +20,7 @@ function Isopod_Substrate() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Isopod Substrate page is coming soon",
+            message: "Isopod Substrate page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });

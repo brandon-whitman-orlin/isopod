@@ -88,7 +88,7 @@ function Contact() {
           <h3>
             Have something you want to talk about? Here's how to reach out:
           </h3>
-          <form className="contact-form" action="https://formspree.io/f/manokzry" method="post">
+          <form id="contact-form" className="contact-form" action="https://formspree.io/f/manokzry" method="post">
             <div>
               <label htmlFor="name">Your Name</label>
               <input

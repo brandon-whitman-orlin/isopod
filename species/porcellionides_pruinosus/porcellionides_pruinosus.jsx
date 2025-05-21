@@ -20,7 +20,7 @@ function Porcellionides_pruinosus() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Porcellionides pruinosus page is coming soon",
+            message: "Porcellionides pruinosus page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });

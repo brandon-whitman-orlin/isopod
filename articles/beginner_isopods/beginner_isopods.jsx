@@ -20,7 +20,7 @@ function Beginner_Isopods() {
         console.log("In progress");
         navigate("/notfound", {
           state: {
-            message: "Beginner Isopods page is coming soon",
+            message: "Beginner Isopods page is coming soon.",
             cta: "Want to work on this article with us?",
           },
         });
