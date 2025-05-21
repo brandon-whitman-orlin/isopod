@@ -40,11 +40,15 @@ function NotFound() {
       <div className="not-found-content">
         <h1 className='not-found-h1'>
           <span className='four-o-four'>
-            4
+            <span>
+              4
+            </span>
             <span className='isopod-o'>
               <IsopodLogo />
             </span>
-            4
+            <span>
+              4
+            </span>
           </span>
           <span className='hyphen'>-</span>
           <span>NOT FOUND</span>
