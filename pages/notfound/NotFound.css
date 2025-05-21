@@ -60,13 +60,13 @@
   fill: currentColor; /* optional: ensure it's colored */
 }
 
-.navbar {
+.not-found .navbar {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     background: hsl(0, 0%, 0%, 1);
 }
 
-.navbar.scrolled {
+.not-found .navbar.scrolled {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     background: hsl(0, 0%, 0%, 1);
