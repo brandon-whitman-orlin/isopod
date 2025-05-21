@@ -48,10 +48,6 @@
     position: relative;
 }
 
-.four-o-four span {
-    background-color: blue;
-}
-
 .not-found-h1 .four-o-four .isopod-o {
     width: 1.25ch;
     position: relative;
@@ -59,7 +55,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 1.2s ease-in-out;
-    /* animation: spin 10s cubic-bezier(0.66, 0, 0.34, 1) infinite alternate; */
+    animation: spin 10s cubic-bezier(0.66, 0, 0.34, 1) infinite alternate;
 }
 
 .isopod-o svg {
